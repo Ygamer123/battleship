@@ -3,8 +3,8 @@ package Game;
 import java.util.Scanner;
 import java.util.Random;
 
-/*Millora el joc dels vaixells que vas fer en la tasca7: Utilitza 5 files i 5 columnes  i amaga 2 vaixells. 
- * També cal que vagis mostrant les caselles on hi ha aigua després de cada jugada. El joc s'acaba quan s'han trobat els 2 vaixells*/
+/*Mejora el juego de los barcos que hiciste en la tarea7: Usa 5 filas y 5 columnas y esconde 2 barcos. 
+ * También es necesario que vayas mostrando las casillas donde hay agua después de cada jugada. El juego termina cuando se han encontrado los 2 barcos*/
 
 public class BattleShip {
     public static void main(String[] args) {
@@ -37,7 +37,7 @@ public class BattleShip {
         while (barcosEncontrados < 2) {
         	
             // Tablero
-            System.out.println("Tauler:");
+            System.out.println("Tablero:");
             System.out.println("  A B C D E");
             for (int i = 0; i < 5; i++) {
                 System.out.print((i + 1) + " ");
@@ -48,15 +48,15 @@ public class BattleShip {
             }
 
             // Pedimos al usuario
-            System.out.print("Introdueix la fila (1-5): ");
+            System.out.print("Introduce la fila (1-5): ");
             int fila = in.nextInt() - 1;
-            System.out.print("Introdueix la columna (A-E): ");
+            System.out.print("Introduce la columna (A-E): ");
             char columnaChar = in.next().charAt(0);
             int columna = columnaChar - 'A'; // Letra a numero
 
             // Comprobamos
             if (barcos[fila][columna]) {
-                System.out.println("---HAS TROBAT UN VAIELL---");
+                System.out.println("---HAS ENCONTRADO UN BARCO---");
                 tablero[fila][columna] = 'V';
                 barcosEncontrados++;
             } else {
@@ -67,7 +67,7 @@ public class BattleShip {
         }
 
         // Fin
-        System.out.println("Felicitats has guanyat (dos vaixells trobats)");
+        System.out.println("Felicidades has GANADO!! (dos barcos encontrados)");
         System.out.println("  A B C D E");
         for (int i = 0; i < 5; i++) {
             System.out.print((i + 1) + " ");
